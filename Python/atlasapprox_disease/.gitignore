@@ -1,0 +1,20 @@
+# Ignore virtual environment
+test_env/
+
+# Ignore Python bytecode files
+*.pyc
+__pycache__/
+
+# Ignore distribution directories
+dist/
+build/
+
+# Ignore Sphinx build directories
+docs/_build/
+
+# Ignore macOS system files
+.DS_Store
+
+docs/
+
+test_script.py
