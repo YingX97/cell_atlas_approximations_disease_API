@@ -10,7 +10,11 @@ def _fetch_metadata(baseurl, disease_keyword):
     if response.status_code != 200:
         raise BadRequestError(f"Error fetching metadata: {response.text}")
     
-    return pd.DataFrame(response.json())
+    # drop the dataset id column, it's not neccessary for user
+    metadata_df = pd.DataFrame(response.json())
+    metadata_df = metadata_df.drop(columns=['dataset_id'])
+    
+    return pd.DataFrame( metadata_df)
 
 def _fetch_differential_celltype_abundance(baseurl, disease_keyword, unique_ids):
 
