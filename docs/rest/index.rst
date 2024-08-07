@@ -28,7 +28,7 @@ Quick Start
 .. _endpoints:
 
 Reference API
-=============
+-------------
 
 The complete API is described below. Endpoints refer to the end of the URL only. For instance, to query the differential cell type abundance for influenza, the **endpoint** description is ``/differential_cell_type_abundance`` so the full URL is ``https://disease-approximation-p523xiwksa-ts.a.run.app/differential_cell_type_abundance?disease_keyword=flu``.
 
