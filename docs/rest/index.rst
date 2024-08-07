@@ -72,7 +72,7 @@ An JSON Array: Each element in the array represents the differential abundance o
 
 .. code-block:: bash
 
-    curl -X POST "https://disease-approximation-p523xiwksa-ts.a.run.app/differential_cell_type_abundance" -d "disease_keyword=flu"
+		curl -X POST "https://disease-approximation-p523xiwksa-ts.a.run.app/differential_cell_type_abundance?disease_keyword=flu"
 
 **Example Response:**
 
@@ -139,7 +139,9 @@ An JSON Array: Each element in the array represents the differential expression 
 
 .. code-block:: bash
 
-    curl -X POST "https://disease-approximation-p523xiwksa-ts.a.run.app/differential_gene_expression" -d "disease_keyword=flu&cell_type_keyword=blood&top_n=5"
+				curl -X POST "https://disease-approximation-p523xiwksa-ts.a.run.app/differential_gene_expression?disease_keyword=flu&cell_type_keyword=blood&top_n=5"
+
+
 
 **Example Response:**
 
