@@ -13,17 +13,17 @@ Quick Start
       .. code-block:: python
       
         import requests
+        import json
 
         url = "https://disease-approximation-p523xiwksa-ts.a.run.app/differential_cell_type_abundance"
         params = {"disease_keyword": "flu"}
 
-				# Make the POST request
-				response = requests.post(url, params=params)
+        # Make the POST request
+        response = requests.post(url, params=params)
 
-				# Pretty-print the JSON response
-
-				data = response.json()
-				print(json.dumps(data, indent=4))
+        # Pretty-print the JSON response
+        data = response.json()
+        print(json.dumps(data, indent=4))
 
 .. _endpoints:
 
