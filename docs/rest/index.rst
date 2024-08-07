@@ -33,11 +33,9 @@ Differential Cell Type Abundance
    - ``disease_keyword`` (str, optional): The keyword of the disease.
    - ``unique_ids`` (list of str, optional): A list of unique IDs.
 
-   **Returns:**
-
   **Returns:**
 
-   - **JSON Array**: Each element in the array represents the differential abundance of a cell type and contains the following fields:
+   An JSON Array: Each element in the array represents the differential abundance of a cell type and contains the following fields:
      - ``disease`` (str): The disease name.
      - ``dataset_title`` (str): Title of the dataset.
      - ``cell_type`` (str): The type of cell.
@@ -102,7 +100,7 @@ Differential gene expression
    
    **Returns:**
 
-   - **JSON Array**: Each element in the array represents the differential expression of a gene and contains the following fields:
+   An JSON Array: Each element in the array represents the differential expression of a gene and contains the following fields:
      - ``disease`` (str): The disease name.
      - ``dataset_title`` (str): Title of the dataset.
      - ``cell_type`` (str): The type of cell.
@@ -175,7 +173,7 @@ Fetch Metadata
      - ``unique_id`` (str): Unique identifier for the record.
      - ``disease`` (str): The disease name.
      - ``cell_type_number`` (int): Number of cell types in this record.
-     - ``dataset_id`` (str): Identifier for the dataset.
+     - ``dataset_title`` (str): title of the dataset.
      - ``collection_name`` (str): Name of the collection the dataset belongs to.
      - ``unit`` (str): Unit of measurement.
      - ``log_transformed`` (bool): Indicates if the data is log-transformed.
@@ -192,14 +190,26 @@ Fetch Metadata
    .. code-block:: json
     [
         {
-            "unique_id": "dc5b840f-58be-d080-7c9b-c17944d1850b",
-            "disease": "influenza",
-            "cell_type_number": 14,
-            "dataset_id": "de2c780c-1747-40bd-9ccf-9588ec186cee",
-            "collection_name": "Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19",
-            "unit": "cptt",
-            "log_transformed": false,
-            "has_normal_baseline": true
-        }
+        "unique_id": "6c9402a9-13cd-55a4-daf5-ad6002360886",
+        "disease": "COVID-19",
+        "dataset_id": "055ca631-6ffb-40de-815e-b931e10718c0",
+        "dataset_title": "Individual Single-Cell RNA-seq PBMC Data from Wilk et al.",
+        "cell_type_number": 26,
+        "collection_name": "A Web Portal and Workbench for Biological Dissection of Single Cell COVID-19 Host Responses",
+        "unit": "cptt",
+        "log_transformed": false,
+        "has_normal_baseline": true
+    },
+    {
+        "unique_id": "2d592d70-812d-7652-77d6-59e4bdb2223c",
+        "disease": "COVID-19",
+        "dataset_id": "de2c780c-1747-40bd-9ccf-9588ec186cee",
+        "dataset_title": "Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19",
+        "cell_type_number": 14,
+        "collection_name": "Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19",
+        "unit": "cptt",
+        "log_transformed": false,
+        "has_normal_baseline": true
+    },
         ...
     ]
