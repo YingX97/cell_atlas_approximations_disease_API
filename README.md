@@ -14,10 +14,10 @@ Currently implemented:
 
 ## Python package
 
-At the moment, the preferred way to access this API is through our Python package [atlasapprox-diseases](https://test.pypi.org/project/atlasapprox-diseases/):
+At the moment, the preferred way to access this API is through our Python package [atlasapprox-disease](https://pypi.org/project/atlasapprox-disease/):
 
 ```bash
-pip install atlasapprox-diseases
+pip install atlasapprox-disease
 ```
 
 For detailed examples and tutorials, please check the `tutorials` folder.
