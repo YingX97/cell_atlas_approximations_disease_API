@@ -79,22 +79,22 @@ An JSON Array: Each element in the array represents the differential abundance o
 .. code-block:: json
 
     [
-       {
-          "disease": "influenza",
-          "dataset_title": "Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19",
-          "cell_type": "blood cell",
-          "comparison": "disease vs. normal",
-          "condition": "disease",
-          "condition_baseline": "normal",
-          "normal_count": 309,
-          "disease_count": 216,
-          "normal_total_count": 17590,
-          "disease_total_count": 10519,
-          "normal_fraction": 0.0175667993177942,
-          "disease_fraction": 0.020534271318566402,
-          "delta_fraction": 0.0029674720007722005
-       },
-       ...
+      {
+        "disease": "influenza",
+        "dataset_title": "Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19",
+        "cell_type": "blood cell",
+        "comparison": "disease vs. normal",
+        "condition": "disease",
+        "condition_baseline": "normal",
+        "normal_count": 309,
+        "disease_count": 216,
+        "normal_total_count": 17590,
+        "disease_total_count": 10519,
+        "normal_fraction": 0.0175667993177942,
+        "disease_fraction": 0.020534271318566402,
+        "delta_fraction": 0.0029674720007722005
+      },
+      ...
     ]
 
 Differential Gene Expression
@@ -148,25 +148,25 @@ An JSON Array: Each element in the array represents the differential expression 
 .. code-block:: json
 
     [
-       {
-          "disease": "influenza",
-          "dataset_title": "Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19",
-          "cell_type": "erythrocyte",
-          "comparison": "disease vs. normal",
-          "condition": "disease",
-          "condition_baseline": "normal",
-          "regulation": "up",
-          "feature_name": "ENSG00000158578",
-          "unit": "cptt",
-          "normal_expr": 3.978105306625366,
-          "disease_expr": 34.78181838989258,
-          "log_transformed": false,
-          "log2_fc": 2.845557928085327,
-          "normal_fraction": 0.20652173459529877,
-          "disease_fraction": 0.9579287767410278,
-          "delta_fraction": 0.7514070272445679
-       },
-       ...
+      {
+        "disease": "influenza",
+        "dataset_title": "Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19",
+        "cell_type": "blood cell",
+        "comparison": "disease vs. normal",
+        "condition": "disease",
+        "condition_baseline": "normal",
+        "regulation": "up",
+        "feature_name": "HBB",
+        "unit": "cptt",
+        "normal_expr": 16.26692008972168,
+        "disease_expr": 89.857421875,
+        "log_transformed": false,
+        "log2_fc": 2.3955936431884766,
+        "normal_fraction": 0.2103559821844101,
+        "disease_fraction": 0.7268518805503845,
+        "delta_fraction": 0.5164958834648132
+      },
+      ...
     ]
 
 Fetch Metadata
@@ -207,27 +207,27 @@ JSON Array: Each element in the array represents a dataset and contains the foll
 .. code-block:: json
 
     [
-        {
-            "unique_id": "6c9402a9-13cd-55a4-daf5-ad6002360886",
-            "disease": "COVID-19",
-            "dataset_id": "055ca631-6ffb-40de-815e-b931e10718c0",
-            "dataset_title": "Individual Single-Cell RNA-seq PBMC Data from Wilk et al.",
-            "cell_type_number": 26,
-            "collection_name": "A Web Portal and Workbench for Biological Dissection of Single Cell COVID-19 Host Responses",
-            "unit": "cptt",
-            "log_transformed": false,
-            "has_normal_baseline": true
-        },
-        {
-            "unique_id": "2d592d70-812d-7652-77d6-59e4bdb2223c",
-            "disease": "COVID-19",
-            "dataset_id": "de2c780c-1747-40bd-9ccf-9588ec186cee",
-            "dataset_title": "Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19",
-            "cell_type_number": 14,
-            "collection_name": "Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19",
-            "unit": "cptt",
-            "log_transformed": false,
-            "has_normal_baseline": true
-        },
-        ...
+      {
+        "unique_id": "6c9402a9-13cd-55a4-daf5-ad6002360886",
+        "disease": "COVID-19",
+        "dataset_id": "055ca631-6ffb-40de-815e-b931e10718c0",
+        "dataset_title": "Individual Single-Cell RNA-seq PBMC Data from Wilk et al.",
+        "cell_type_number": 26,
+        "collection_name": "A Web Portal and Workbench for Biological Dissection of Single Cell COVID-19 Host Responses",
+        "unit": "cptt",
+        "log_transformed": false,
+        "has_normal_baseline": true
+      },
+      {
+        "unique_id": "2d592d70-812d-7652-77d6-59e4bdb2223c",
+        "disease": "COVID-19",
+        "dataset_id": "de2c780c-1747-40bd-9ccf-9588ec186cee",
+        "dataset_title": "Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19",
+        "cell_type_number": 14,
+        "collection_name": "Immunophenotyping of COVID-19 and influenza highlights the role of type I interferons in development of severe COVID-19",
+        "unit": "cptt",
+        "log_transformed": false,
+        "has_normal_baseline": true
+      },
+      ...
     ]
