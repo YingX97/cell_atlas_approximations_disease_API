@@ -1,6 +1,7 @@
 # Ignore virtual environment
 atlasapprox_disease_api_env
 .venv
+.myenv
 
 # Web secret key
 secret_key.txt
