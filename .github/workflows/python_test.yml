@@ -1,0 +1,41 @@
+name: Test Python package
+
+on: [push, pull_request]
+
+jobs:
+  build_ubuntu:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.10", "3.11", "3.12"]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies including for testing
+      env:
+        OS_NAME: ${{ matrix.os }}
+        CONDA_PY: ${{ matrix.python-version }}
+      working-directory: Python
+      run: pip install pytest
+
+    - name: Install atlasapprox-disease
+      env:
+        OS_NAME: ${{ matrix.os }}
+        CONDA_PY: ${{ matrix.python-version }}
+      working-directory: Python
+      run: |
+        pip install .[plotting]
+
+    - name: Test with pytest
+      env:
+        OS_NAME: ${{ matrix.os }}
+        CONDA_PY: ${{ matrix.python-version }}
+      working-directory: Python
+      run: pytest
