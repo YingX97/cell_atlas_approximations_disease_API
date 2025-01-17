@@ -13,10 +13,10 @@ The package enables researchers to address complex biological questions across m
 
 ## Features
 
-- **Differential Analysis**:
+- **Differential analysis**:
   - Differential gene expression.
   - Differential cell type abundance.
-- **Top Measurements**:
+- **Top measurements**:
   - Identify the highest measurements for genes or cell types across datasets.
 - **Additional Capabilities**:
 	-Retrieve metadata for datasets, organs, and cell types.
@@ -27,7 +27,14 @@ The package enables researchers to address complex biological questions across m
 ---
 
 ## Installation
+**Note: Package under development**
 
-Install the development version of the package from Test PyPI:
+This package is currently under active development and not yet officially released on PyPI.
+A testing version is available on Test PyPI for early access and testing.
+
+**Install from Test PyPI ():**
 ```bash
-TODO
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ atlasapprox-disease==0.1.0.dev1
+```
+- The --index-url flag ensures the package is installed from Test PyPI.
+- The --extra-index-url flag ensures dependencies are installed from PyPI.
