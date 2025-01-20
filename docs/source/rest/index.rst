@@ -58,9 +58,9 @@ Retrieve metadata records from the source database that match the specified filt
 
 **Returns: A dict with the following key-value pairs:**:
 
-- ``dataset_id`` – Id for the dataset that satisfies the filter conditions.  
-- ``cell_type`` – The type of cell recorded in the dataset.  
-- ``tissue_general`` – The general tissue category where the cell type was observed.  
+- ``dataset_id`` – Dataset ID of the cells that satisfies the filter conditions.  
+- ``cell_type`` – The type of the cells as annotated in the dataset.  
+- ``tissue_general`` – The general tissue category where the cells were observed.  
 - ``disease`` – The disease condition associated with the dataset.  
 - ``sex`` – The biological sex of the sample donor (e.g., male, female).  
 - ``development_stage_general`` – The general developmental stage (e.g., adult, fetal).  
@@ -71,7 +71,7 @@ Retrieve metadata records from the source database that match the specified filt
    - Each object in the returned list represents a unique **metadata combination** that satisfies the applied filters.
    - The results are **split by cell type and sex**, meaning that if multiple cell types or sexes exist within a dataset, each combination is listed as a separate entry.
    - The same ``dataset_id`` may appear multiple times, as it can contain multiple cell types or sex-based subgroupings.
-   - The ``cell_count`` represents the number of cells that match the filters for each specific combination of **cell type, sex, tissue, disease, and developmental stage**.
+   - The ``cell_count`` represents the number of cells that match the filters for each specific combination of **dataset, cell type, sex, tissue, disease, and developmental stage**.
 
 
 Differential Cell Type Abundance
@@ -86,8 +86,8 @@ Retrieve differential cell type abundance across conditions such as disease, tis
 
 **Parameters**:
 
-- ``differential_axis`` *(string, default: disease)* – The axis along which differential abundance is calculated.  
-- 
+- ``differential_axis`` *(string, default: disease)* – The axis along which differential abundance is calculated, i.e. **disease** = disease condition vs normal condition.  
+
 **Filter Parameters**:
 
 - ``disease`` *(optional)* – Filter by disease condition.  
@@ -95,22 +95,22 @@ Retrieve differential cell type abundance across conditions such as disease, tis
 - ``tissue`` *(optional)* – Filter by specific tissue.  
 - ``sex`` *(optional)* – Filter by sex.  
 - ``development_stage`` *(optional)* – Filter by developmental stage.  
-- ``unique_ids`` *(optional)* – Restrict the query to specific datasets by providing one or multiple dataset IDs.  
+.. - ``unique_ids`` *(optional)* – Restrict the query to specific records by providing one or multiple dataset IDs.  
 
 **Returns: A dict with the following key-value pairs:**  
 
-- ``dataset_id`` – The unique dataset identifier where the data originates.  
+- ``dataset_id`` – Dataset ID of the cells that satisfies the filter conditions.
 - ``cell_type`` – The cell type for which the differential abundance is computed.  
 - ``tissue_general`` – The general tissue category associated with the dataset.  
 - ``disease`` – The disease condition involved in the comparison.  
 - ``baseline`` – The reference condition used for comparison (e.g., "normal").  
 - ``ncell_disease`` – The number of cells sampled in the disease condition.  
 - ``ncell_baseline`` – The number of cells sampled in the baseline (normal) condition.  
-- ``frac_baseline`` – The proportion of the cell type in the baseline condition.  
+- ``frac_baseline`` – The proportion of the cell type in the baseline (normal) condition.  
 - ``frac_disease`` – The proportion of the cell type in the disease condition.  
 - ``delta_frac`` – The difference in cell type proportion between disease and baseline (``frac_disease - frac_baseline``).  
 
-**Interpretation of `delta_frac` values**:
+**Interpretation of** ``delta_frac`` **values**:
 
 - **Positive**: Higher cell type abundance in the disease condition compared to the baseline.
 
@@ -125,7 +125,7 @@ Differential Gene Expression
 
 **Description**:
 
-This endpoint retrieves differentially expressed genes between a baseline condition and a specified state (e.g., disease vs. normal). By default, it identifies the **top 10 upregulated and downregulated genes** in each cell type across all datasets that match the filter criteria.  
+This endpoint retrieves differentially expressed genes between a baseline condition and a specified state (e.g., disease vs. normal). By default, it identifies the **top 10 up-regulated and top 10 down-regulated genes** in each cell type across all datasets that match the filter criteria.  
 
 Users can query either:
 
@@ -137,14 +137,12 @@ The comparison is computed within individual datasets to prevent batch effects.
 
 **Parameters**:
 
-- **Query Configuration:**
+- ``differential_axis`` *(string, default: disease)* – Defines the variable to compare (e.g., disease).
+- ``feature`` *(optional, not to appear together with top_n)* – Specify a gene to analyze.
+- ``top_n`` *(optional, not to appear together with feature, default: 10)* – Number of top differentially expressed genes to return.
+- ``method`` *(default: delta_fraction)* – Method to calculate differential expression (``delta_fraction`` or ``ratio_average``).
 
-  - ``differential_axis`` *(string, default: disease)* – Defines the variable to compare (e.g., disease, sex).
-  - ``feature`` *(optional)* – Specify a gene to analyze.
-  - ``top_n`` *(integer, optional, default: 10)* – Number of top differentially expressed genes to return.
-  - ``method`` *(string, default: delta_fraction)* – Method to calculate differential expression.
-
-- **Filters (Optional, to restrict the dataset before computation):**
+- **Filters (optional):**
 
   - ``disease`` – Filter by disease.
   - ``cell_type`` – Filter by cell type.
