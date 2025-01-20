@@ -6,6 +6,8 @@ atlasapprox_disease_api_env
 secret_key.txt
 web/static/atlas_data
 
+# Sphinx documentation
+docs/build/
 
 documentation/
 __pycache__/
