@@ -12,7 +12,7 @@ os.environ["ATLASAPPROX_DISEASE_HIDECREDITS"] = "yes"
 # -- Project information -----------------------------------------------------
 
 project = 'Cell Atlas Approximations(Disease) API'
-copyright = '2024, Fabio Zanini'
+copyright = '2025, Fabio Zanini'
 author = 'Fabio Zanini, Ying Xu'
 
 
@@ -49,7 +49,7 @@ sphinx_gallery_conf = {
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "sphinx_rtd_theme"
-html_static_path = ["_static"]
+# html_static_path = ["_static"]
 
 # -- Enable TODOs in documentation -------------------------------------------
 todo_include_todos = True

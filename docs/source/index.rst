@@ -6,13 +6,12 @@
 API for disease cell atlas approximations
 ===============================================
 
-Cell Atlas Approximation (Disease) is a lightweight API designed for analyzing approximated single-cell transcriptomics data, using CellxGene Census as its initial data source."
+Cell Atlas Approximation (Disease) is a lightweight API designed for analyzing approximated single-cell transcriptomics data, using CellxGene Census as its initial data source.
+The API enables researchers to address complex biological questions across multiple organs, cell types, and disease conditions such as:
 
-Example of API usage:
-
-- Perform differential gene expression analysis between disease and normal conditions for a specific cell type.
-- Compare differential cell type abundance across diseases, organs, or developmental stages.
-- Ask the average expression of a set of genes across different cell types, tissues, and diseases.
+- *What is the expression of a specific gene in a specific disease across all datasets?*
+- *In COVID-19, what is the differential cell abundance of each cell type between normal and disease states?*
+- *What are the top 20 most differentially expressed genes in kidney disease?*
 
 Version
 -------
